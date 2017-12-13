@@ -4,6 +4,10 @@ module Parser
       @log_records = log_records
     end
 
+    def call(opts)
+      self.send(opts)
+    end
+
     def summary
       most_visits
       most_visits_uniq

@@ -4,4 +4,4 @@ require_relative '../lib/parser'
 
 processor = Parser::Processor.new(ARGV[0])
 formatter = processor.formattable
-formatter.summary
+formatter.call(ARGV[1] || 'summary')
