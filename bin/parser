@@ -1,0 +1,7 @@
+#! /usr/bin/env ruby
+
+require_relative '../lib/parser'
+
+processor = Parser::Processor.new(ARGV[0])
+formatter = processor.formattable
+formatter.summary
