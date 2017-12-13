@@ -1,10 +1,8 @@
 module Parser
   class Processor
     def initialize(log_path)
-      @log_path    = log_path
       @log_records = []
-
-      process_logs
+      process_logs(log_path)
     end
 
     def formattable
@@ -16,8 +14,8 @@ module Parser
     end
 
     private
-    def process_logs
-      File.open(@log_path, 'r') do |f|
+    def process_logs(log_path)
+      File.open(log_path, 'r') do |f|
         f.each_line do |line|
           instantiate_log_record(line)
         end
